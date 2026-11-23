@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#100b0d">
+<title>Duelo de Japonés de Saturno y Carmen</title>
+<style>
+:root{--bg:#100b0d;--panel:#1b1216;--panel2:#24171d;--red:#d94350;--gold:#e7bd70;--muted:#b8a9ad;--white:#fff8f5;--green:#79c99a}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#5a1725 0%,#211016 38%,var(--bg) 75%);color:var(--white);font-family:system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+.wrap{width:min(760px,100%);margin:auto;padding:22px 16px 48px}.top{text-align:center;padding:20px 0 18px}.eyebrow{letter-spacing:.28em;color:var(--gold);font-size:.72rem;font-weight:800}.kanji{font-size:2rem;color:#efc77d;margin:8px 0 0}.title{font-size:clamp(2rem,8vw,3.5rem);line-height:1;margin:8px 0;text-transform:uppercase;letter-spacing:.035em;font-weight:950}.subtitle{color:var(--muted);letter-spacing:.13em;font-size:.8rem}
+.card{background:linear-gradient(145deg,rgba(40,25,31,.97),rgba(22,15,19,.98));border:1px solid #55303b;border-radius:20px;padding:22px;box-shadow:0 18px 60px #0007;margin:14px 0}.players{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}.player{border:1px solid #67404a;background:#21171b;border-radius:14px;padding:16px;text-align:center}.player strong{display:block;color:var(--gold);font-size:1.35rem;letter-spacing:.08em}.player span{font-size:.8rem;color:var(--muted)}.meta{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:15px 0}.pill{border:1px solid #69404a;border-radius:99px;padding:7px 12px;color:#f3d8dc;font-size:.82rem}.btn{width:100%;border:0;border-radius:12px;padding:15px 18px;background:linear-gradient(100deg,#a91f36,#e34c55);color:white;font-size:1rem;font-weight:850;cursor:pointer;box-shadow:0 7px 22px #a91f3644}.btn:disabled{opacity:.45;cursor:not-allowed}.secondary{background:#35232a;border:1px solid #70404b;box-shadow:none;margin-top:10px}.muted{color:var(--muted);font-size:.9rem;line-height:1.55}.field{width:100%;padding:13px 14px;border-radius:10px;border:1px solid #69404a;background:#110d10;color:white;font-size:1rem;margin:8px 0 15px}.label{font-weight:700;font-size:.9rem}.hidden{display:none!important}.qtop{display:flex;align-items:center;justify-content:space-between;gap:10px}.progress{height:7px;background:#49313a;border-radius:99px;overflow:hidden;margin:16px 0}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--red),var(--gold));transition:width .2s}.timer{font-size:1.5rem;font-weight:900;color:var(--gold);border:1px solid #80505a;border-radius:12px;padding:8px 13px;min-width:76px;text-align:center}.timer.urgent{color:#ff6b72;border-color:#ff6b72;animation:pulse .6s infinite alternate}@keyframes pulse{to{transform:scale(1.05)}}.qnum{color:var(--gold);font-weight:800;letter-spacing:.12em;font-size:.8rem}.question{font-size:clamp(1.25rem,4vw,1.8rem);font-weight:850;margin:18px 0 8px;line-height:1.25}.jp{font-size:1.15rem;color:#f0c77d;margin:6px 0 20px}.answers{display:grid;gap:10px}.answer{background:#2b1c22;border:1px solid #68404a;border-radius:12px;padding:14px;text-align:left;color:white;font-size:1rem;cursor:pointer}.answer:active{transform:scale(.99)}.answer.selected{border-color:var(--gold);background:#49302b}.answer:disabled{cursor:default;opacity:.8}.foot{display:flex;justify-content:space-between;color:var(--muted);font-size:.82rem;margin-top:16px}.result{text-align:center}.score{font-size:3.8rem;font-weight:950;color:var(--gold);line-height:1.1}.review{border-top:1px solid #563640;padding:14px 0;text-align:left}.review h3{font-size:1rem;margin:0 0 7px}.correct{color:var(--green)}.wrong{color:#ff8288}.small{font-size:.86rem;color:var(--muted);line-height:1.45}.tag{font-size:.72rem;color:var(--gold);letter-spacing:.12em;font-weight:800}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+ <div class="eyebrow">SPECIAL EDITION · JAPANESE CHALLENGE</div>
+ <div class="kanji">日本語バトル</div>
+ <h1 class="title">Duelo de Japonés<br><span style="color:#e7bd70;font-size:.62em">Saturno y Carmen</span></h1>
+ <div class="subtitle">SATURNO &amp; CARMEN · NIPPONGO BATTLE · NIVEL PRINCIPIANTE</div>
+</header>
+<section id="intro" class="card">
+ <div class="tag">EL DESAFÍO COMIENZA AQUÍ</div>
+ <div class="players">
+  <div class="player"><strong>01</strong><b>SATURNO</b><span>Jugador 1</span></div>
+  <div class="player"><strong>02</strong><b>CARMEN</b><span>Jugador 2</span></div>
+ </div>
+ <div class="meta"><span class="pill">20 preguntas</span><span class="pill">20 segundos por pregunta</span><span class="pill">4 alternativas</span></div>
+ <p class="muted">Cada jugador debe abrir el mismo enlace en su propio dispositivo y realizar el examen por separado. Las respuestas correctas solo se mostrarán al terminar. ¡Sin traductores ni búsquedas!</p>
+ <label class="label" for="player">¿Quién va a jugar desde este dispositivo?</label>
+ <select id="player" class="field"><option value="Saturno">Saturno · Jugador 1</option><option value="Carmen">Carmen · Jugador 2</option></select>
+ <button id="start" class="btn">COMENZAR EL DUELO</button>
+ <p class="small">El cronómetro empieza al mostrar cada pregunta. Si llega a cero, se registra como no respondida y continúa.</p>
+</section>
+<section id="quiz" class="card hidden">
+ <div class="qtop"><div><div class="tag" id="playerTag">JUGADOR</div><div class="qnum" id="counter">PREGUNTA 1 DE 20</div></div><div class="timer" id="timer">20</div></div>
+ <div class="progress"><div class="bar" id="bar"></div></div>
+ <div class="question" id="question"></div><div class="jp" id="jp"></div>
+ <div class="answers" id="answers"></div>
+ <div class="foot"><span id="answered">Selecciona una respuesta</span><span>⏱ 20 s</span></div>
+</section>
+<section id="result" class="card hidden">
+ <div class="tag">RESULTADO FINAL</div><h2 id="resultTitle">Examen completado</h2>
+ <div class="score" id="score">0/20</div><div id="scoreText" class="muted"></div>
+ <p class="small">Aquí tienes la corrección completa. Compara tu resultado con el del otro jugador.</p>
+ <button class="btn" id="showReview">REVELAR RESPUESTAS Y CORRECCIÓN</button>
+ <div id="review" class="hidden"></div>
+ <button class="btn secondary" id="again">VOLVER AL INICIO</button>
+</section>
+</div>
+<script>
+const questions = [
+{q:"¿Qué significa こんにちは (konnichiwa)?",jp:"こんにちは",o:["Buenos días / hola (durante el día)","Buenas noches","Gracias","Hasta mañana"],a:0,e:"こんにちは se usa como saludo durante el día."},
+{q:"¿Cómo se dice «gracias» en japonés?",jp:"ありがとう",o:["すみません (sumimasen)","ありがとう (arigatō)","さようなら (sayōnara)","おはよう (ohayō)"],a:1,e:"ありがとう significa «gracias»."},
+{q:"¿Qué significa おはよう (ohayō)?",jp:"おはよう",o:["Buenas noches","Adiós","Buenos días","Por favor"],a:2,e:"おはよう es un saludo de buenos días, informal."},
+{q:"¿Cómo se dice «mamá» en japonés de forma cotidiana?",jp:"お母さん",o:["お父さん","お母さん","お兄さん","妹"],a:1,e:"お母さん (okaasan) significa madre/mamá."},
+{q:"¿Qué significa お父さん (otōsan)?",jp:"お父さん",o:["Padre / papá","Hermano mayor","Abuelo","Hijo"],a:0,e:"お父さん (otōsan) significa padre o papá."},
+{q:"¿Qué número es 三 (san)?",jp:"三",o:["Uno","Dos","Tres","Cuatro"],a:2,e:"三 se lee san y significa tres."},
+{q:"¿Cómo se escribe «uno» en japonés?",jp:"1",o:["二 (ni)","一 (ichi)","三 (san)","五 (go)"],a:1,e:"一 se lee ichi y significa uno."},
+{q:"¿Qué significa 猫 (neko)?",jp:"猫",o:["Perro","Pájaro","Gato","Pez"],a:2,e:"猫 (neko) significa gato."},
+{q:"¿Cómo se dice «perro» en japonés?",jp:"犬",o:["犬 (inu)","猫 (neko)","馬 (uma)","鳥 (tori)"],a:0,e:"犬 se lee inu y significa perro."},
+{q:"¿Qué color significa 赤 (aka)?",jp:"赤",o:["Azul","Rojo","Blanco","Negro"],a:1,e:"赤 (aka) significa rojo."},
+{q:"¿Cómo se dice «agua» en japonés?",jp:"水",o:["火 (hi)","木 (ki)","水 (mizu)","土 (tsuchi)"],a:2,e:"水 se lee mizu y significa agua."},
+{q:"¿Qué significa さようなら (sayōnara)?",jp:"さようなら",o:["Hola","Gracias","Lo siento","Adiós"],a:3,e:"さようなら es una forma de despedirse: adiós."},
+{q:"¿Qué significa はい (hai)?",jp:"はい",o:["No","Sí","Quizás","Perdón"],a:1,e:"はい significa sí."},
+{q:"¿Cómo se dice «no» en japonés?",jp:"いいえ",o:["はい (hai)","どうぞ (dōzo)","いいえ (iie)","ありがとう (arigatō)"],a:2,e:"いいえ (iie) significa no."},
+{q:"¿Qué significa 友達 (tomodachi)?",jp:"友達",o:["Amigo/a","Profesor/a","Familia","Estudiante"],a:0,e:"友達 (tomodachi) significa amigo o amiga."},
+{q:"¿Qué número es 七 (nana / shichi)?",jp:"七",o:["Cinco","Seis","Siete","Ocho"],a:2,e:"七 puede leerse nana o shichi y significa siete."},
+{q:"¿Qué significa 白 (shiro)?",jp:"白",o:["Negro","Blanco","Verde","Amarillo"],a:1,e:"白 (shiro) significa blanco."},
+{q:"¿Cómo se dice «comida / arroz cocido» en japonés?",jp:"ご飯",o:["パン (pan)","水 (mizu)","ご飯 (gohan)","肉 (niku)"],a:2,e:"ご飯 (gohan) puede significar arroz cocido o comida."},
+{q:"¿Qué significa 先生 (sensei)?",jp:"先生",o:["Doctor/a o profesor/a (título de respeto)","Estudiante","Amigo/a","Hermano/a"],a:0,e:"先生 (sensei) es un tratamiento para docentes y otros profesionales, como médicos."},
+{q:"¿Qué significa こんばんは (konbanwa)?",jp:"こんばんは",o:["Buenos días","Buenas tardes/noches (saludo al llegar la noche)","Hasta luego","Buenas noches (al ir a dormir)"],a:1,e:"こんばんは es un saludo que se usa por la tarde-noche; no es la despedida para ir a dormir."}
+];
+let index=0, answers=[], timeLeft=20, tick=null, playerName="Saturno", locked=false;
+const $=id=>document.getElementById(id);
+function show(id){["intro","quiz","result"].forEach(x=>$(x).classList.toggle("hidden",x!==id))}
+function start(){playerName=$("player").value;index=0;answers=Array(questions.length).fill(null);show("quiz");$("playerTag").textContent="JUGADOR: "+playerName.toUpperCase();render()}
+function render(){
+ locked=false;const q=questions[index];$("counter").textContent=`PREGUNTA ${index+1} DE ${questions.length}`;$("bar").style.width=`${index/questions.length*100}%`;$("question").textContent=q.q;$("jp").textContent=q.jp;$("answered").textContent="Selecciona una respuesta";
+ const box=$("answers");box.innerHTML="";q.o.forEach((v,i)=>{const b=document.createElement("button");b.className="answer";b.textContent=String.fromCharCode(65+i)+". "+v;b.onclick=()=>choose(i);box.appendChild(b)});
+ timeLeft=20;updateTimer();clearInterval(tick);tick=setInterval(()=>{timeLeft--;updateTimer();if(timeLeft<=0){clearInterval(tick);if(!locked){answers[index]=null;next()}}},1000);
+}
+function updateTimer(){$("timer").textContent=timeLeft;$("timer").classList.toggle("urgent",timeLeft<=5)}
+function choose(i){if(locked)return;locked=true;clearInterval(tick);answers[index]=i;[...$("answers").children].forEach((b,n)=>{b.disabled=true;if(n===i)b.classList.add("selected")});$("answered").textContent="Respuesta registrada";setTimeout(next,450)}
+function next(){clearInterval(tick);index++;if(index<questions.length)render();else finish()}
+function finish(){show("result");const score=answers.reduce((s,a,i)=>s+(a===questions[i].a?1:0),0);$("score").textContent=score+"/20";$("resultTitle").textContent=playerName+", examen completado";$("scoreText").textContent=score>=18?"¡Nivel excelente! Dominas muy bien estas palabras básicas.":score>=14?"¡Muy buen resultado! Tienes una buena base.":score>=10?"Buen intento. ¡A seguir practicando!":"Este es el comienzo. ¡A estudiar y revancha!";$("bar").style.width="100%";$("review").innerHTML="";$("review").classList.add("hidden");$("showReview").classList.remove("hidden")}
+function reveal(){const r=$("review");r.innerHTML=questions.map((q,i)=>{const ok=answers[i]===q.a;const chosen=answers[i]===null?"Sin respuesta":q.o[answers[i]];return `<div class="review"><h3>${i+1}. ${q.q}</h3><div class="${ok?"correct":"wrong"}">${ok?"✓ Correcta":"✗ Incorrecta"} · Tu respuesta: ${chosen}</div><div class="small"><b>Respuesta correcta:</b> ${q.o[q.a]}<br>${q.e}</div></div>`}).join("");r.classList.remove("hidden");$("showReview").classList.add("hidden")}
+$("start").onclick=start;$("showReview").onclick=reveal;$("again").onclick=()=>{clearInterval(tick);show("intro")};
+</script>
+</body>
+</html>
